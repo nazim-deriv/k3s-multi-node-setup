@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: init-app-svc
+  namespace: init-container-ns
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 30001
