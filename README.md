@@ -17,7 +17,7 @@ This setup assumes the underlying infrastructure deployed on AWS. If that so, th
 - On worker nodes security group, allow following inbound rules:
   - ICMP [From Public IP address of worker instance (This is optional, just to test node reachability)]
   - SSH  [From public IP where you're trying to connect to instance]
-  - Application ports [In case if there are any specific application on the cluster which demands external access. For network policy implementation, it needs port `30007` to be opened to reach Nginx UI to verify]
+  - Application ports [In case if there are any specific application on the cluster which demands external access. For network policy & sidecar testing, it needs port `30007` & `30010` to be opened to reach Nginx web UI to verify]
 - Modify hostnames of all 3 nodes (master & worker) and make the permanent by adding them in `/etc/hostname` file
 - Also, add host entries for each hosts in `/etc/hosts` file to be able to resolve the node from other nodes
 
