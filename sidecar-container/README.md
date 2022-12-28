@@ -17,5 +17,6 @@ kubectl -n sidecar-container get pods -o jsonpath="{.items[0].status.hostIP}"
 ```
 - Access the Nginx web UI in the browser using this IP over port `30010`
 - Now check the logs of the sidecar container which should show Nginx web UI access logs
-```kubectl -n sidecar-container logs sidecar-pod -c sidecar-log-viewer
+```
+kubectl -n sidecar-container logs sidecar-pod -c sidecar-log-viewer
 ```
