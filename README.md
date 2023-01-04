@@ -5,7 +5,7 @@ This setup requires (but not limited) to have the following nodes:
 - k3s worker nodes (No. of nodes: 2)
 
 ### Pre-requisites to prepare the nodes:
-This setup assumes the underlying infrastructure deployed on AWS. If that so, there are following steps that needs to be carried out prior to k3s installation on nodes. Following are those steps outlined:
+This setup assumes the underlying infrastructure deployed on AWS. If that so, there are following steps outlined that needs to be carried out prior to k3s installation on nodes:
 
 - Deploy 3 instances (1 master & 2 worker nodes)
 - Keep one separate security group for master node and another one shared amongst the worker nodes
@@ -17,8 +17,8 @@ This setup assumes the underlying infrastructure deployed on AWS. If that so, th
 - On worker nodes security group, allow following inbound rules:
   - ICMP [From Public IP address of worker instance (This is optional, just to test node reachability)]
   - SSH  [From public IP where you're trying to connect to instance]
-  - Application ports [In case if there are any specific application on the cluster which demands external access. For network policy & sidecar testing, it needs port `30007` & `30010` to be opened to reach Nginx web UI to verify]
-- Modify hostnames of all 3 nodes (master & worker) and make the permanent by adding them in `/etc/hostname` file
+  - Application ports [In case if there are any specific application on the cluster which demands external access. For network policy & sidecar testing through the demos listed in this repo, it needs port `30007` & `30010` to be opened to reach Nginx web UI to verify]
+- Modify hostnames of all 3 nodes (master & worker) and make them permanent by adding them in `/etc/hostname` file
 - Also, add host entries for each hosts in `/etc/hosts` file to be able to resolve the node from other nodes
 
 ### k3s installation
