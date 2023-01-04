@@ -11,7 +11,7 @@ kubectl apply -f nginx_deploy.yaml
 kubectl apply -f busybox_pod.yaml
 ```
 - Login to the busy box container & test the connectivity to Nginx pods (which ae in different namespace) by using telnet to clusterIP of Nginx service over port `80`. This should work due to default networking behaviour of k8s where connectivity between different namespace is allowed
-- Now, implement a network policy in which will deny all ingress to the resources in `nginx-deploy` namespace
+- Now, implement a network policy which will deny all ingress to the resources in `nginx-deploy` namespace
 ```
 kubectl apply -f default_deny_network_policy.yaml
 ```
