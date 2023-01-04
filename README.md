@@ -28,7 +28,7 @@ curl -sfL https://get.k3s.io | sh -
 ```
 - Once its successfully installed, verify the `k3s` service status using following:
 ```
-systemctl status k3s.service
+sudo systemctl status k3s.service
 ```
 - On the master node, go to `/var/lib/rancher/k3s/server/` and retrieve the token from `agent-token` file which is needed to configure worker nodes
 - On the worker nodes, run following command to add them in the cluster:
@@ -37,7 +37,7 @@ curl -sfL https://get.k3s.io | K3S_URL=https://<hostname_of_master_node>:6443 K3
 ```
 - Once completed, verify `k3s-agent` service on the worker nodes:
 ```
-systemctl status k3s-agent.service
+sudo systemctl status k3s-agent.service
 ```
 - Once this is completed and all the services are running, verify the cluster nodes by running following on master node:
 ```
