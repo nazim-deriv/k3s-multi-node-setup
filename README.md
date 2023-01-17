@@ -4,7 +4,7 @@ This setup requires (but not limited) to have the following nodes:
 - k3s master node (No. of nodes: 1)
 - k3s worker nodes (No. of nodes: 2)
 
-### Pre-requisites to prepare the nodes:
+## Pre-requisites to prepare the nodes:
 This setup assumes the underlying infrastructure deployed on AWS. If that so, there are following steps outlined that needs to be carried out prior to k3s installation on nodes:
 
 - Deploy 3 instances (1 master & 2 worker nodes)
@@ -21,7 +21,7 @@ This setup assumes the underlying infrastructure deployed on AWS. If that so, th
 - Modify hostnames of all 3 nodes (master & worker) and make them permanent by adding them in `/etc/hostname` file
 - Also, add host entries for each hosts in `/etc/hosts` file to be able to resolve the node from other nodes
 
-### k3s installation
+## k3s installation
 - Install k3s on master node using the following command:
 ```
 curl -sfL https://get.k3s.io | sh -
@@ -45,6 +45,6 @@ kubectl get nodes
 kubectl get pods -A
 ```
 
-### Troubleshoot
+## Troubleshoot
 - In the event the installation on worker nodes remain stuck at `[INFO]  systemd: Starting k3s-agent`, please make sure all the necessary ports in security groups are allowed
 - Also, verify if you're able to reach master node from worker nodes over port `6443` using utilities such as `telnet` or `dig`
